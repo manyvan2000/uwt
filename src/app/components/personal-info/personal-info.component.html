@@ -1,0 +1,184 @@
+<section class="personal-info">
+
+    <mat-card>
+        <mat-tab-group [color]="'primary'" [backgroundColor]="'primary'">
+            <mat-tab>
+                <ng-template mat-tab-label>
+                    {{primary.firstName != ''? primary.firstName :'Primary Applicant'}}
+                    <i class="fas fa-user uwt-field"></i>
+                </ng-template>
+
+                <form>
+                    <div class="nameDiv">
+                        <mat-form-field class="uwt-field uwt-field-third">
+                            <input type="text" matInput placeholder="First Name" name="firstName" [(ngModel)]="primary.firstName">
+                        </mat-form-field>
+                        <mat-form-field class="uwt-field uwt-field-third">
+                            <input type="text" matInput placeholder="Middle Name">
+                        </mat-form-field>
+                        <mat-form-field class="uwt-field uwt-field-third">
+                            <input type="text" matInput placeholder="Last Name">
+                        </mat-form-field>
+                    </div>
+                    <div class="address">
+                        <mat-form-field class="uwt-field-full">
+                            <input type="text" matInput placeholder="Street">
+                        </mat-form-field>
+                        <mat-form-field class="uwt-field uwt-field-third">
+                            <input type="text" matInput placeholder="City">
+                        </mat-form-field>
+                        <mat-form-field class="uwt-field uwt-field-third">
+                            <mat-select placeholder="State">
+                                <mat-option *ngFor="let state of states" [value]="state.abbreviation">
+                                    {{state.name}} - {{state.abbreviation}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <mat-form-field class="uwt-field uwt-field-third">
+                            <input type="number" matInput placeholder="Zip">
+                        </mat-form-field>
+                    </div>
+                    <div class="dobDiv">
+                        <!-- <mat-form-field class="uwt-field uwt-field-third"> -->
+                            <mat-button-toggle-group name="fontStyle" aria-label="Font Style" #citizenship="matButtonToggleGroup">
+                                <mat-button-toggle value="USC">US Citizen</mat-button-toggle>
+                                <mat-button-toggle value="PR">Permanent Resident</mat-button-toggle>
+                                <mat-button-toggle value="NR">Non Resident</mat-button-toggle>
+                            </mat-button-toggle-group>
+                        <!-- </mat-form-field> -->
+                        <mat-form-field class="uwt-field uwt-field-third">
+                            <input matInput [matDatepicker]="dob" placeholder="Date of Birth">
+                            <mat-datepicker-toggle matSuffix [for]="dob"></mat-datepicker-toggle>
+                            <mat-datepicker #dob></mat-datepicker>
+                        </mat-form-field>
+                        <mat-form-field class="uwt-field uwt-field-third">
+                            <input type="text" matInput placeholder="SSN" ng-pattern="/^[0-9]{3}-[0-9]{2}-[0-9]{4}$/" />
+                        </mat-form-field>
+                    </div>
+                    <div>
+                        <mat-form-field class="uwt-field uwt-field-third">
+                            <input type="text" matInput placeholder="Driver's License#">
+                        </mat-form-field>
+                        <mat-form-field class="uwt-field uwt-field-third">
+                            <mat-select placeholder="issuing State">
+                                <mat-option *ngFor="let state of states" [value]="state.abbreviation">
+                                    {{state.name}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <mat-form-field class="uwt-field uwt-field-third">
+                            <input matInput [matDatepicker]="expDate" placeholder="Expiration Date">
+                            <mat-datepicker-toggle matSuffix [for]="expDate"></mat-datepicker-toggle>
+                            <mat-datepicker #expDate></mat-datepicker>
+                        </mat-form-field>
+                    </div>
+                    <div class="citizenship">
+
+                        <mat-form-field class="uwt-field uwt-field-quarter">
+                            <mat-select placeholder="Marital Status">
+                                <mat-option value="single">
+                                    Single
+                                </mat-option>
+                                <mat-option value="married">
+                                    Married
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <mat-form-field class="uwt-field-quarter">
+                            <input type="number" matInput placeholder="# of Dependents">
+                        </mat-form-field>
+                    </div>
+                </form>
+            </mat-tab>
+            <mat-tab>
+                <ng-template mat-tab-label>
+                    Co-Applicant
+                    <i class="fas fa-user-friends uwt-field"></i>
+                </ng-template>
+
+
+                <form>
+                    <div class="nameDiv">
+                        <mat-form-field class="uwt-field uwt-field-third">
+                            <input type="text" matInput placeholder="First Name">
+                        </mat-form-field>
+                        <mat-form-field class="uwt-field uwt-field-third">
+                            <input type="text" matInput placeholder="Middle Name">
+                        </mat-form-field>
+                        <mat-form-field class="uwt-field uwt-field-third">
+                            <input type="text" matInput placeholder="Last Name">
+                        </mat-form-field>
+                    </div>
+                    <div class="address">
+                        <mat-form-field class="uwt-field-full">
+                            <input type="text" matInput placeholder="Street">
+                        </mat-form-field>
+                        <mat-form-field class="uwt-field uwt-field-third">
+                            <input type="text" matInput placeholder="City">
+                        </mat-form-field>
+                        <mat-form-field class="uwt-field uwt-field-third">
+                            <mat-select placeholder="State">
+                                <mat-option *ngFor="let state of states" [value]="state.abbreviation">
+                                    {{state.abbreviation}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <mat-form-field class="uwt-field uwt-field-third">
+                            <input type="number" matInput placeholder="Zip">
+                        </mat-form-field>
+                    </div>
+                    <div class="dobDiv">
+                        <mat-form-field class="uwt-field uwt-field-third">
+                            <mat-select placeholder="Citizenship">
+                                <mat-option *ngFor="let country of countries" [value]="country.Alpha3Code">
+                                    {{country.Name}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <mat-form-field class="uwt-field uwt-field-third">
+                            <input matInput [matDatepicker]="dob2" placeholder="Date of Birth">
+                            <mat-datepicker-toggle matSuffix [for]="dob2"></mat-datepicker-toggle>
+                            <mat-datepicker #dob2></mat-datepicker>
+                        </mat-form-field>
+                        <mat-form-field class="uwt-field uwt-field-third">
+                            <input type="text" matInput placeholder="SSN" ng-pattern="/^[0-9]{3}-[0-9]{2}-[0-9]{4}$/" />
+                        </mat-form-field>
+                    </div>
+                    <div>
+                        <mat-form-field class="uwt-field uwt-field-third">
+                            <input type="text" matInput placeholder="Driver's License#">
+                        </mat-form-field>
+                        <mat-form-field class="uwt-field uwt-field-third">
+                            <mat-select placeholder="issuing State">
+                                <mat-option *ngFor="let state of states" [value]="state.abbreviation">
+                                    {{state.abbreviation}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <mat-form-field class="uwt-field uwt-field-third">
+                            <input matInput [matDatepicker]="expDate2" placeholder="Expiration Date">
+                            <mat-datepicker-toggle matSuffix [for]="expDate2"></mat-datepicker-toggle>
+                            <mat-datepicker #expDate2></mat-datepicker>
+                        </mat-form-field>
+                    </div>
+                    <div class="citizenship">
+
+                        <mat-form-field class="uwt-field uwt-field-half">
+                            <mat-select placeholder="Marital Status">
+                                <mat-option value="single">
+                                    Single
+                                </mat-option>
+                                <mat-option value="married">
+                                    Married
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <mat-form-field class="uwt-field-half">
+                            <input type="number" matInput placeholder="# of Dependents">
+                        </mat-form-field>
+                    </div>
+                </form>
+            </mat-tab>
+        </mat-tab-group>
+    </mat-card>
+</section>

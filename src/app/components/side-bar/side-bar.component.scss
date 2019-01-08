@@ -1,0 +1,62 @@
+.side-nav {
+    height: 100%;
+    width: 20vw;
+    position: fixed;
+    z-index: 1;
+    top: 11vh;
+    left: 0;
+    background-color: #cccccc;
+    overflow-x: hidden;
+    padding: 2.5vh 0.5vw;
+    margin: 0.2vh 1vw;
+}
+
+.middle-align {
+    align-items: center; 
+}
+
+.uwt-p {
+    margin-left: 1vw; 
+}
+
+.uwt-sb-item {
+    height: 5vh; 
+    padding: .2vh 0.5vw; 
+    align-items: center;
+}
+
+@media screen and (max-width: 500px) {
+.lg-only {
+    display: none;
+}
+}
+
+
+.green {
+    background-color: green; 
+    color: white; 
+}
+
+.side-nav-tab {
+    height: 10vh; 
+    width: 20vw; 
+}
+
+.uwt-side-nav-text {
+    width:10vw; 
+    white-space:normal;
+    display: block;
+    height: 10vh; 
+}
+
+.side-nav-icon-left{ 
+    display: block; 
+    height:10vh;
+    width: 5vw; 
+}
+
+.side-nav-icon-right {
+    display:block; 
+    height:10vh;
+    width: 5vw; 
+}

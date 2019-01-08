@@ -1,1 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+
+
+@media  screen and (min-width: 500px) { 
+    .uwt-field-full{
+        width: 95.5%; 
+        margin: 0.3vh 1vw; 
+    }
+    .uwt-field-half {
+        width: 47.5%
+    }
+    .uwt-field-third {
+        width: 30%; 
+    }
+    
+    .uwt-field-quarter {
+        width: 23.75%;
+    }
+    
+    
+    }

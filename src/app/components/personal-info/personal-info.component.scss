@@ -1,0 +1,36 @@
+
+
+.personal-info {
+    position: absolute;
+    top: 11.2vh;
+    bottom: 0;
+    left: 21vw;
+    right: 0.9vw;
+    background: #eee;
+    padding: 2vw;
+}
+
+// .mat-select {
+//     width: 40%; 
+// }
+
+.uwt-field{
+    margin: 0.3vh 1vw; 
+}
+
+
+.cdk-overlay-container {
+
+    top: 10vh;
+    left: 20vw;
+    width: 80vw;
+    /* height: 90vh; */
+}
+.mat-datepicker-content .mat-calendar {
+    width: 250px;
+    height: 300px;
+}
+
+.mat-expansion-panel {
+    border: 1px solid #dadada;
+}

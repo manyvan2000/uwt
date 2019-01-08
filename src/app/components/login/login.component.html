@@ -1,0 +1,18 @@
+<section *ngIf="!loggedIn" class="login-section">  
+<mat-card>
+    <mat-card-title><i class="fas fa-lock"></i></mat-card-title>
+    <form class="login-form">
+        <mat-form-field> 
+            <input type="text" name="loginId" matInput [(ngModel)]="loginId" placeholder="user id"> 
+        </mat-form-field>
+        <mat-form-field>
+            <input type="password" matInput name="password" [(ngModel)]="password" placeholder="password">
+        </mat-form-field>
+        <button mat-raised-button (click)="login()" color="primary" class="uwt-field-full" >Login</button>
+    </form>
+</mat-card>
+</section>
+<section *ngIf="loggedIn">
+    <side-bar></side-bar>
+    <personal-info></personal-info>
+</section>
